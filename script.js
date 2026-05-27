@@ -1,5 +1,5 @@
 /**
- * AETHER INTERIOR STUDIO - MAIN JAVASCRIPT
+ * NOBLE DEZIGNS - MAIN JAVASCRIPT
  * =========================================
  * Features:
  * - Loading screen animation
@@ -507,5 +507,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    console.log('Aether Interior Studio - Website initialized successfully');
+    console.log('Noble Dezigns - Website initialized successfully');
 });

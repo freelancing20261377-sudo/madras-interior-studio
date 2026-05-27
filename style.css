@@ -1,25 +1,35 @@
 /* =============================================
-   AETHER INTERIOR STUDIO - STYLESHEET
-   Premium Interior Design Studio Website
-   Colors: White, Black, Beige, Gold
+   MADRAS INTERIOR STUDIO - STYLESHEET
+   Interior Design Studio | Chennai
+   Theme: Deep Navy + Gold Luxury
    ============================================= */
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
-    /* Color Palette */
-    --color-black: #0A0A0A;
-    --color-dark: #1A1A1A;
-    --color-charcoal: #2D2D2D;
-    --color-gray: #6B6B6B;
-    --color-light-gray: #A0A0A0;
-    --color-silver: #C8C8C8;
-    --color-white: #FFFFFF;
-    --color-cream: #FAF8F5;
-    --color-beige: #F5F0E8;
-    --color-beige-dark: #E8E0D0;
-    --color-gold: #C9A96E;
-    --color-gold-dark: #B8945F;
-    --color-gold-light: #D4BC8E;
+    /* === DARK NAVY PALETTE (from logo) === */
+    --color-black:      #070E17;   /* deepest navy */
+    --color-dark:       #0D1A27;   /* logo background navy */
+    --color-dark-2:     #112235;   /* slightly lighter navy */
+    --color-charcoal:   #162C40;   /* card/section navy */
+    --color-navy-mid:   #1E3A52;   /* borders, dividers */
+    --color-gray:       #6B8AA0;   /* muted text */
+    --color-light-gray: #94ADBF;   /* secondary text */
+    --color-silver:     #B8CDD9;   /* light text */
+    --color-white:      #FFFFFF;
+
+    /* === WARM ACCENT TONES === */
+    --color-cream:      #0F2033;   /* "cream" sections = slightly lighter navy */
+    --color-beige:      #132639;   /* alternate section bg */
+    --color-beige-dark: #1E3A52;   /* borders */
+
+    /* === GOLD ACCENTS === */
+    --color-gold:       #C9A96E;   /* primary gold */
+    --color-gold-dark:  #B8945F;   /* hover gold */
+    --color-gold-light: #DEC08A;   /* lighter gold */
+
+    /* === TEXT ON DARK === */
+    --color-body-text:  #C8D8E4;   /* main body text on dark bg */
+    --color-heading:    #EEF4F8;   /* headings on dark bg */
 
     /* Typography */
     --font-heading: 'Playfair Display', Georgia, serif;
@@ -38,10 +48,10 @@
     --transition-smooth: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-    --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
-    --shadow-gold: 0 8px 30px rgba(201, 169, 110, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+    --shadow-gold: 0 8px 30px rgba(201, 169, 110, 0.2);
 
     /* Z-index */
     --z-loading: 9999;
@@ -65,8 +75,8 @@ body {
     font-family: var(--font-body);
     font-weight: 400;
     line-height: 1.7;
-    color: var(--color-charcoal);
-    background-color: var(--color-white);
+    color: var(--color-body-text);
+    background-color: var(--color-dark);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -106,12 +116,12 @@ ul, ol {
     padding: var(--section-padding) 0;
 }
 
-/* Glassmorphism */
+/* Glassmorphism - dark navy tinted */
 .glass {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(13, 26, 39, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(201, 169, 110, 0.15);
     box-shadow: var(--shadow-md);
 }
 
@@ -134,15 +144,15 @@ ul, ol {
 }
 
 .btn-primary {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    border: 2px solid var(--color-black);
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border: 2px solid var(--color-gold);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-gold);
-    border-color: var(--color-gold);
-    color: var(--color-white);
+    background-color: var(--color-gold-light);
+    border-color: var(--color-gold-light);
+    color: var(--color-dark);
     box-shadow: var(--shadow-gold);
     transform: translateY(-2px);
 }
@@ -181,13 +191,13 @@ ul, ol {
     font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 500;
     line-height: 1.2;
-    color: var(--color-black);
+    color: var(--color-heading);
     margin-bottom: 20px;
 }
 
 .section-subtitle {
     font-size: 1.05rem;
-    color: var(--color-gray);
+    color: var(--color-light-gray);
     max-width: 600px;
     line-height: 1.7;
 }
@@ -226,12 +236,9 @@ ul, ol {
 }
 
 .loading-logo {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: var(--color-white);
-    letter-spacing: 8px;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
     animation: fadeInUp 0.8s ease forwards;
 }
@@ -272,11 +279,12 @@ ul, ol {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(7, 14, 23, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
     padding: 14px 0;
+    border-bottom: 1px solid rgba(201,169,110,0.12);
 }
 
 .nav-container {
@@ -300,7 +308,7 @@ ul, ol {
 }
 
 .navbar.scrolled .nav-logo {
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 .logo-icon {
@@ -338,7 +346,7 @@ ul, ol {
 }
 
 .navbar.scrolled .nav-link {
-    color: var(--color-charcoal);
+    color: var(--color-silver);
 }
 
 .nav-link::after {
@@ -362,6 +370,33 @@ ul, ol {
     color: var(--color-gold);
 }
 
+/* Logo image (navbar, footer, loading) */
+.nav-logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.navbar.scrolled .nav-logo-img {
+    height: 40px;
+}
+
+.footer-logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.loading-logo-img {
+    height: 120px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Hamburger Menu */
 .nav-toggle {
     display: none;
@@ -380,7 +415,7 @@ ul, ol {
 }
 
 .navbar.scrolled .hamburger-line {
-    background-color: var(--color-black);
+    background-color: var(--color-white);
 }
 
 .nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
@@ -543,7 +578,7 @@ ul, ol {
    ABOUT SECTION
    ============================================= */
 .about {
-    background-color: var(--color-cream);
+    background-color: var(--color-cream); /* #0F2033 navy */
 }
 
 .about-grid {
@@ -579,7 +614,7 @@ ul, ol {
     bottom: -40px;
     right: -30px;
     width: 55%;
-    border: 8px solid var(--color-cream);
+    border: 8px solid var(--color-dark);
     overflow: hidden;
     box-shadow: var(--shadow-md);
 }
@@ -630,7 +665,7 @@ ul, ol {
 
 .about-text {
     font-size: 1rem;
-    color: var(--color-gray);
+    color: var(--color-light-gray);
     margin-bottom: 20px;
     line-height: 1.8;
 }
@@ -652,7 +687,7 @@ ul, ol {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 600;
-    color: var(--color-black);
+    color: var(--color-gold);
     line-height: 1;
 }
 
@@ -669,7 +704,7 @@ ul, ol {
    SERVICES SECTION
    ============================================= */
 .services {
-    background-color: var(--color-white);
+    background-color: var(--color-dark);
 }
 
 .services-grid {
@@ -679,9 +714,9 @@ ul, ol {
 }
 
 .service-card {
-    background-color: var(--color-cream);
+    background-color: var(--color-charcoal);
     padding: 48px 36px;
-    border: 1px solid transparent;
+    border: 1px solid var(--color-navy-mid);
     transition: all var(--transition-smooth);
     position: relative;
     overflow: hidden;
@@ -699,9 +734,9 @@ ul, ol {
 }
 
 .service-card:hover {
-    background-color: var(--color-white);
-    border-color: var(--color-beige-dark);
-    box-shadow: var(--shadow-lg);
+    background-color: var(--color-dark-2);
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-gold);
     transform: translateY(-8px);
 }
 
@@ -715,24 +750,24 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-beige-dark);
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-navy-mid);
     color: var(--color-gold);
     margin-bottom: 28px;
     transition: all var(--transition-base);
 }
 
 .service-card:hover .service-icon {
-    background-color: var(--color-black);
-    border-color: var(--color-black);
-    color: var(--color-gold);
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-dark);
 }
 
 .service-title {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--color-black);
+    color: var(--color-heading);
     margin-bottom: 14px;
 }
 
@@ -748,7 +783,7 @@ ul, ol {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--color-black);
+    color: var(--color-silver);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -771,7 +806,7 @@ ul, ol {
    PORTFOLIO SECTION
    ============================================= */
 .portfolio {
-    background-color: var(--color-cream);
+    background-color: var(--color-cream); /* #0F2033 */
 }
 
 .portfolio-filter {
@@ -788,18 +823,18 @@ ul, ol {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--color-gray);
+    color: var(--color-light-gray);
     background: transparent;
-    border: 1px solid var(--color-beige-dark);
+    border: 1px solid var(--color-navy-mid);
     transition: all var(--transition-base);
     cursor: pointer;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    border-color: var(--color-black);
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border-color: var(--color-gold);
 }
 
 .portfolio-grid {
@@ -914,7 +949,7 @@ ul, ol {
    WHY CHOOSE US SECTION
    ============================================= */
 .why-us {
-    background-color: var(--color-white);
+    background-color: var(--color-dark);
 }
 
 .why-us-grid {
@@ -930,7 +965,7 @@ ul, ol {
 
 .why-us-lead {
     font-size: 1.05rem;
-    color: var(--color-gray);
+    color: var(--color-light-gray);
     line-height: 1.8;
     margin-bottom: 40px;
     max-width: 500px;
@@ -954,23 +989,24 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-cream);
-    border: 1px solid var(--color-beige-dark);
+    background-color: var(--color-charcoal);
+    border: 1px solid var(--color-navy-mid);
     color: var(--color-gold);
     flex-shrink: 0;
     transition: all var(--transition-base);
 }
 
 .why-feature:hover .why-feature-icon {
-    background-color: var(--color-black);
-    border-color: var(--color-black);
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-dark);
 }
 
 .why-feature-text h4 {
     font-family: var(--font-heading);
     font-size: 1.15rem;
     font-weight: 500;
-    color: var(--color-black);
+    color: var(--color-heading);
     margin-bottom: 6px;
 }
 
@@ -1010,7 +1046,7 @@ ul, ol {
    TESTIMONIALS SECTION
    ============================================= */
 .testimonials {
-    background-color: var(--color-cream);
+    background-color: var(--color-cream); /* #0F2033 navy */
 }
 
 .testimonials-slider {
@@ -1049,7 +1085,7 @@ ul, ol {
     font-weight: 400;
     font-style: italic;
     line-height: 1.5;
-    color: var(--color-black);
+    color: var(--color-heading);
     margin-bottom: 36px;
     position: relative;
     padding-left: 30px;
@@ -1073,7 +1109,7 @@ ul, ol {
 .testimonial-info h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--color-black);
+    color: var(--color-heading);
 }
 
 .testimonial-info span {
@@ -1094,17 +1130,17 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-beige-dark);
-    color: var(--color-charcoal);
+    background-color: var(--color-charcoal);
+    border: 1px solid var(--color-navy-mid);
+    color: var(--color-silver);
     transition: all var(--transition-base);
 }
 
 .testimonial-prev:hover,
 .testimonial-next:hover {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    border-color: var(--color-black);
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border-color: var(--color-gold);
 }
 
 .testimonials-dots {
@@ -1117,7 +1153,7 @@ ul, ol {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: var(--color-beige-dark);
+    background-color: var(--color-navy-mid);
     cursor: pointer;
     transition: all var(--transition-base);
     border: none;
@@ -1133,7 +1169,7 @@ ul, ol {
    CONTACT SECTION
    ============================================= */
 .contact {
-    background-color: var(--color-white);
+    background-color: var(--color-dark);
 }
 
 .contact-grid {
@@ -1152,7 +1188,7 @@ ul, ol {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--color-black);
+    color: var(--color-heading);
     margin-bottom: 32px;
 }
 
@@ -1161,7 +1197,7 @@ ul, ol {
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 24px;
-    color: var(--color-gray);
+    color: var(--color-light-gray);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -1186,7 +1222,7 @@ ul, ol {
     font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--color-black);
+    color: var(--color-heading);
     margin-bottom: 10px;
 }
 
@@ -1211,7 +1247,7 @@ ul, ol {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-charcoal);
+    color: var(--color-light-gray);
     margin-bottom: 8px;
 }
 
@@ -1222,9 +1258,9 @@ ul, ol {
     padding: 14px 18px;
     font-family: var(--font-body);
     font-size: 0.95rem;
-    color: var(--color-charcoal);
-    background-color: var(--color-cream);
-    border: 1px solid var(--color-beige-dark);
+    color: var(--color-body-text);
+    background-color: var(--color-charcoal);
+    border: 1px solid var(--color-navy-mid);
     outline: none;
     transition: all var(--transition-base);
 }
@@ -1321,7 +1357,7 @@ button[type="submit"].loading .btn-loader {
 .contact-map iframe {
     display: block;
     width: 100%;
-    filter: grayscale(0.3);
+    filter: grayscale(0.2) invert(0.05);
 }
 
 /* =============================================
