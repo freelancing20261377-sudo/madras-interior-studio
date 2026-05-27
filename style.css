@@ -1609,6 +1609,18 @@ button[type="submit"].loading .btn-loader {
         --container-padding: 20px;
     }
 
+    .navbar {
+        padding: 14px 0;
+    }
+
+    .nav-logo-img {
+        height: 36px;
+    }
+
+    .navbar.scrolled .nav-logo-img {
+        height: 32px;
+    }
+
     .nav-menu {
         position: fixed;
         top: 0;
@@ -1646,6 +1658,14 @@ button[type="submit"].loading .btn-loader {
 
     .hero-title {
         font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-desc {
+        font-size: 0.98rem;
     }
 
     .hero-cta {
